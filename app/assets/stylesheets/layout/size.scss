@@ -1,0 +1,22 @@
+/*====================
+height・width(px)
+=====================*/
+@for $i from 0 through 125 {
+  .height-#{$i} {
+    height: $i * 1px !important;
+    max-height: $i * 1px !important;
+  }
+  .width-#{$i} {
+    width: $i * 1px !important;
+    max-width: $i * 1px !important;
+  }
+}
+/*====================
+height・width(%)
+=====================*/
+[class*="wm-"]{ margin: 0 auto !important; }
+@for $i from 0 through 100 {
+  .h-#{$i} { height: $i * 1% !important; }
+  .w-#{$i},
+  .wm-#{$i} { width: $i * 1% !important; }
+}

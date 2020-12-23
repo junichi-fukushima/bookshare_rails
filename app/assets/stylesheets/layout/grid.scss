@@ -1,0 +1,79 @@
+.t-center{
+    text-align: center;
+}
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.d-inline {
+    display: inline;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.container,
+.container-fluid{
+    width: 100%;
+}
+.row{
+    display: flex;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+// 横並び(軸=x)
+.justify-content-start {
+    justify-content: start;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-end {
+    justify-content: end;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+// 縦並び(軸=y)
+.align-items-start {
+    align-items: start;
+}
+.align-items-end {
+    align-items: end;
+}
+.align-items-center {
+    align-items: center;
+}
+/*====================
+Bootstrap flex系一覧
+=====================*/
+// .d-{*}-flex
+// .d-{*}-inline-flex
+// 方向・軸
+// .flex-{*}-row
+// .flex-{*}-row-reverse
+// .flex-{*}-column
+// .flex-{*}-column-reverse
+// 横並び(軸=x)
+// .justify-content-{*}-start
+// .justify-content-{*}-end
+// .justify-content-{*}-center
+// .justify-content-{*}-between
+// .justify-content-{*}-around
+// 縦並び(軸=y)
+// .align-items-{*}-start
+// .align-items-{*}-end
+// .align-items-{*}-center
+// .align-items-{*}-baseline
+// .align-items-{*}-stretch
+// 改行
+// .flex-{*}-nowrap
+// .flex-{*}-wrap
+// .flex-{*}-wrap-reverse

@@ -1,0 +1,34 @@
+.p-025{ padding: 0.25rem !important; }
+.p-05{ padding: 0.5rem !important; }
+// 左
+.pl-025,
+.px-025{ padding-left: 0.25rem !important; }
+.pl-05,
+.px-05{ padding-left: 0.5rem !important; }
+// 右
+.pr-025,
+.px-025{ padding-right: 0.25rem !important; }
+.pr-05,
+.px-05{ padding-right: 0.5rem !important; }
+// 上
+.pt-025,
+.py-025{ padding-top: 0.25rem !important; }
+.pt-05,
+.py-05{ padding-top: 0.5rem !important; }
+// 下
+.pb-025,
+.py-025{ padding-bottom: 0.25rem !important; }
+.pb-05,
+.py-05{ padding-bottom: 0.5rem !important; }
+
+@for $i from 0 through 10 {
+.p-#{$i} { padding: $i * 1rem !important; }
+.pl-#{$i},
+.px-#{$i} { padding-left: $i * 1rem !important; }
+.pr-#{$i},
+.px-#{$i} { padding-right: $i * 1rem !important; }
+.pt-#{$i},
+.py-#{$i} { padding-top: $i * 1rem !important; }
+.pb-#{$i},
+.py-#{$i} { padding-bottom: $i * 1rem !important; }
+}

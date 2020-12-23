@@ -1,0 +1,2 @@
+class BookreviewController < ApplicationController
+end

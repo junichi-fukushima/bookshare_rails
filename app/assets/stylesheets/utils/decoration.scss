@@ -1,0 +1,15 @@
+/*====================
+font系
+=====================*/
+[class*="n-font"]{ font-weight: normal !important; }
+[class*="b-font"]{ font-weight: bold !important; }
+
+@for $i from 0 through 100 {
+  [class*="font-#{$i}"] { font-size: $i * 1px !important; }
+  .letter-#{$i} { letter-spacing: $i * 1px !important; }
+}
+/*====================
+scroll系
+=====================*/
+.over-scroll { overflow: scroll; }
+.over-wrap { overflow: wrap; }
