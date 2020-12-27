@@ -3,10 +3,10 @@ $red: #ff0000;
 $green: #78A54B;
 $brown :#685745;
 $dark-brown: #2a1907;
-$gray :#707070;
-$light-gray: #70707072;
+$gray :#f5f5f5;
+$light-gray: #f5f5f5;;
 $black: #424242;
-$modal-black: rgba(0,0,0,0.8);
+$blue: #6495ed;
 
 
 // green
@@ -27,3 +27,7 @@ $modal-black: rgba(0,0,0,0.8);
 // black
 .c-black{ color: $black; }
 .bg-black{ background: $black; }
+// blue
+.c-blue{ color: $blue; }
+.bg-blue{ background: $blue; }
+

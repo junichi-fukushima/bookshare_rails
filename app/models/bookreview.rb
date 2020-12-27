@@ -22,4 +22,4 @@ end
 
 # ***** 個人的なメモエリア ******
 # アクティブストレージ導入方法
-# →　https://qiita.com/hmmrjn/items/7cc5e5348755c517458a
+# → https://qiita.com/hmmrjn/items/7cc5e5348755c517458a

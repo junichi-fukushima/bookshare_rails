@@ -56,5 +56,5 @@ gem 'rename'
 gem 'rubocop', require: true
 gem 'ransack'
 gem 'pry-rails'
-gem "active_hash"
-gem "devise"
+gem 'active_hash'
+gem 'devise'

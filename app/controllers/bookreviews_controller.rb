@@ -1,2 +1,4 @@
-class BookreviewController < ApplicationController
+class BookreviewsController < ApplicationController
+    def index
+    end    
 end
