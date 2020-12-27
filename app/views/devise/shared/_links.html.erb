@@ -3,11 +3,15 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <div class="form-group t-center ">
+    <%= link_to ">>新規登録ページはコチラ", new_registration_path(resource_name), class: "c-black other_path" %><br />
+  </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <div class="form-group t-center ">
+    <%= link_to ">>パスワードをお忘れの場合はコチラ", new_password_path(resource_name), class: "c-black other_path" %><br />
+  </div>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
