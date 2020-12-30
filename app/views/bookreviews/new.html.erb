@@ -1,0 +1,46 @@
+<%= render "shared/secondheader" %>
+
+<%= form_with model: @bookreview , local: true do |f| %>
+  <h2 class='form-header-text w-60'>
+    本の書評・アウトプットを投稿します。
+  </h2>
+  <div class='form-wrap w-60 c-black bg-light-gray'>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="img-upload form-group t-center">
+      <div class="weight-bold-text form-text-wrap">
+        本の画像
+        <span class="indispensable c-white">任意</span>
+      </div>
+      <div class="click-upload my-1">
+        <%= f.file_field :image, id:"book-image" %>
+        <div id="image-list"></div>
+      </div>
+    </div>
+    <div class="form-group t-center">
+      <div class='form-text-wrap'>
+        <label class="author" for="author">著者</label>
+        <span class="indispensable c-white bg-blue">必須</span>
+      </div>
+      <%= f.text_area :author, class:"input-default input-name w-60", id:"author", placeholder:"ひらがな・漢字で入力してください" %>
+    </div>
+    <div class="form-group t-center">
+      <div class='form-text-wrap'>
+        <label class="text" for="text">書評・アウトプット</label>
+        <span class="indispensable c-white bg-blue">必須</span>
+      </div>
+      <%= f.text_area :text, class:"input-default input-name w-60", id:"text", placeholder:"書評・アウトプットはコチラに入力してください。" ,style:"height:300px" %>
+      <p class="t-right w-83">コチラでフォームを広げることができます。<span class="c-red top-arrow">↑</span></p>
+    </div>
+    <div class="form-group t-center">
+      <div class="form-text-wrap">
+        ジャンル
+        <span class="indispensable c-white bg-blue">必須</span>
+      </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"input-default w-65", id:"item-category"}) %>
+    </div>
+
+ </div>
+  <div class="actions t-center ">
+    <%= f.submit "投稿する", class: "action-btn t-center bg-blue c-white" %>
+  </div>
+<% end %>

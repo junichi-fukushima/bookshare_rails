@@ -1,3 +1,7 @@
+<div class='login-flash-message c-blue py-05 font-bold t-center'>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+</div>
 <%= render "shared/header" %>
 <div class="kv">
   <%= image_tag 'kv-small.jpg', class: 'kv-img_small sp vw-100' %>
@@ -6,7 +10,7 @@
     <h1>BookShare</h1>
     <p class="py-1">〜学んだ知識をアウトプットしよう〜</p>
     <p class="white-btn t-center bg-white a_decorate w-50">
-      <a href="#" class="c-black">本のアウトプットを投稿する</a>
+      <%= link_to "本のアウトプットを投稿する", new_bookreview_path ,class: "c-black" %>
     </p>
   </div>
 </div>

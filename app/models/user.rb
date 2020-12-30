@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   # パスワードの英数字混在を否定
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'は6文字以上の英数字で入力してください'
   
   
   # アソシエーション

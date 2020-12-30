@@ -43,7 +43,7 @@ h2,.actions{
 }
 // hover&focus系
 .action-btn:hover{
-  background:rgba(#6495ed,0.2);
+  background:rgba(#6495ed,0.5);
 }
 .input-default:focus{
     background-color:#fff8dc;
@@ -63,13 +63,14 @@ h2,.actions{
     background: #fff;
     font-size: 12px;
     cursor: pointer;
-  }
-  .input-birth-wrap>select:focus{
+}
+.input-birth-wrap>select:focus{
     background-color:#fff8dc;
     border: 1px #6495ed solid;
     box-shadow: 1px 1px 3px 1px #6495ed;
-  }
-  .input-birth-wrap>p {
+}
+.input-birth-wrap>p {
     line-height: 60px;
     padding: 0 5px;
-  }
+}
+
