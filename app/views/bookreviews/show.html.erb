@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+<section class="p-2">
+ <h2 class="c-blue py-1">タイトル: <%= @bookreview.title %></h2>
+ <div class='book-lists'>
+    <div class='list row'>
+       <div class='book-img-content w-30'>
+         <%= image_tag @bookreview.image, class: "book-img w-100" %>
+       </div>
+       <div class='book-info w-70 px-2'>
+          <h4 class='book-name'>
+            著者: <%= @bookreview.author %>
+          </h4>
+          <h4 class='book-name py-1'>
+            タイトル: <%= @bookreview.title %>
+          </h4>
+          <h4 class='book-name py-1'>
+            書評・アウトプット: 
+          </h4>
+          <p><%= @bookreview.text %><p>
+        </div>
+    </div>
+  </div>
+   <button class="action-btn t-center bg-blue c-white actions ">
+      <%= link_to '編集ページへ', edit_bookreview_path(@bookreview.id) , class:"a_decorate c-white" %>
+    </button>
+   <button class="action-btn t-center bg-blue c-white actions">
+      <%= link_to '投稿を削除する', bookreview_path(@bookreview.id),method: :delete , class:"a_decorate c-white" %>
+    </button>
+</section>

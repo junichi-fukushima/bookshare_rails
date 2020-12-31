@@ -18,7 +18,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       };
   
       document.getElementById('book-image').addEventListener('change', function(e){
-        // 画像が表示されている場合のみ、すでに存在している画像を削除する
+        console.log("aaa")
         const imageContent = document.querySelector('img');
         if (imageContent){
           imageContent.remove();

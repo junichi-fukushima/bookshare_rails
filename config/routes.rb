@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     post 'names', to: 'users/registrations#create_name'
   end
   
-  resources :bookreviews
+  resources :bookreviews do
+    collection do
+      get 'search'
+    end
+  end
 end

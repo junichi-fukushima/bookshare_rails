@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+
+<main>
+<h2 class="c-blue p-2 w-40 ">書評・アウトプット検索結果</h2>
+<ul class='book-lists row w-90 p-2'>
+
+  <% if @results.length !=0 %>
+    <% @results.each do |result| %>
+    <li class='book-list t-center'>
+       <%= link_to bookreview_path(result.id) do %>
+       <div class='book-img-content'>
+         <%= image_tag result.image, class: "book-img w-100" %>
+       </div>
+       <% end %>
+       <div class='book-info py-1'>
+          <h4 class='book-name'>
+            <%= result.author %>
+          </h4>
+          <h4 class='book-name py-1'>
+            <%= result.title %>
+          </h4>
+        </div>
+    </li>
+    <% end %>
+    <% else %>
+  該当する書評・アウトプットはありません
+  <% end %>
+  </ul>
+<main>
+<%= link_to "トップへ戻る", root_path ,class: "c-black other_path p-1" %>
+

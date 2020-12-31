@@ -2,14 +2,14 @@
 
 <%= form_with model: @bookreview , local: true do |f| %>
   <h2 class='form-header-text w-60'>
-    本の書評・アウトプットを投稿します。
+    本の書評・アウトプットを投稿を編集します。
   </h2>
   <div class='form-wrap w-60 c-black bg-light-gray'>
     <%= render 'shared/error_messages', model: f.object %>
     <div class="img-upload form-group t-center">
       <div class="weight-bold-text form-text-wrap">
         本の画像
-        <span class="indispensable c-white bg-blue">必須</span>
+        <span class="indispensable c-white">任意</span>
       </div>
       <div class="click-upload my-1">
         <%= f.file_field :image, id:"book-image" %>
@@ -43,7 +43,7 @@
         ジャンル
         <span class="indispensable c-white bg-blue">必須</span>
       </div>
-      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: "---"} ,{class:"input-default w-65", id:"item-category"}) %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"input-default w-65", id:"item-category"}) %>
     </div>
 
  </div>

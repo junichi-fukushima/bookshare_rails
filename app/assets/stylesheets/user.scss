@@ -1,4 +1,4 @@
-h2,.actions{
+.form-header-text,.actions{
     margin:3% auto 2%;
 }
 .form-wrap{
@@ -28,24 +28,24 @@ h2,.actions{
         .info-text{
             font-size:12px;
         }
-        .other_path:hover{
-            color:#6495ed;
-        }
-    
     }
 }
 
+.other_path:hover{
+    color:#6495ed;
+}
+
 .action-btn{
-  font-size:30px;
-  padding:1.5% 3%;
+  font-size:20px;
+  padding:1.2% 2.5%;
   border: none;
   
 }
 // hover&focus系
-.action-btn:hover{
+.action-btn:hover,.search-btn:hover{
   background:rgba(#6495ed,0.5);
 }
-.input-default:focus{
+.input-default:focus,.search-input:focus{
     background-color:#fff8dc;
     border: 1px #6495ed solid;
     box-shadow: 1px 1px 3px 1px #6495ed;

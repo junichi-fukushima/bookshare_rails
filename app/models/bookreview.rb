@@ -13,10 +13,13 @@ class Bookreview < ApplicationRecord
   # バリデーション
   with_options presence: true do
     validates :genre_id, numericality: { other_than: 0, message: 'を選んでください' }
-    validates :author, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: 'の部分を正しく入力してください' }
     validates :text
     validates :image
   end
+
+  validates :author, presence: { message:'の部分を正しく入力してください' }
+  validates :title, presence: { message:'を正しく入力してください' }
+
 end
 
 

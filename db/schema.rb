@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_234812) do
 
   create_table "bookreviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "author", default: "", null: false
+    t.string "title", default: "", null: false
     t.text "text", null: false
     t.integer "genre_id", null: false
     t.bigint "user_id"

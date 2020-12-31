@@ -1,7 +1,9 @@
-<div class='login-flash-message c-blue py-05 font-bold t-center'>
-  <%= flash[:notice] %>
-  <%= flash[:alert] %>
-</div>
+<% if flash[:notice] || flash[:alert] %>
+  <div class='login-flash-message c-blue py-05 font-bold t-center'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+<% end %>
 <%= render "shared/header" %>
 <div class="kv">
   <%= image_tag 'kv-small.jpg', class: 'kv-img_small sp vw-100' %>
@@ -14,8 +16,53 @@
     </p>
   </div>
 </div>
-<main class="bg-gray">
-  <div>検索エリアをここに作る</div>
+<main class="bg-gray pb-05">
+ <h2 class="c-blue p-2 w-40 ">書評・アウトプット投稿一覧</h2>
+ <%= search_form_for @p, url: search_bookreviews_path do |f| %>
+ <h3 class="c-blue py-1 px-2 w-40 ">書評・アウトプット検索</h3>
+ <div class='search-form-wrap row align-items-center mb-2 px-1 '>
+   <div class="wrap">
+    <div class="search-form-group">
+      <%= f.label :author_eq, '著者名' ,class: "search-label" ,for: "author_cont" %>
+      <%= f.search_field :author_cont ,class: "search-input"%>
+      </div>  
+    <div class="search-form-group">
+      <%= f.label :title_eq, 'タイトル名' ,class: "search-label"%>
+      <%= f.search_field :title_cont ,class: "search-input"%>
+      </div>  
+      <div class="search-form-group">
+        <%= f.label :genre_id_eq, 'カテゴリ',class: "search-label" %>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: "---"}, class:"search-input bg-white c-black" %>
+      </div>  
+    </div>
+    <div class="t-center">
+        <%= f.submit '検索' , class: "search-btn t-center bg-blue c-white"%>
+    </div>
+  </div>  
+ <% end %>
+ <ul class='book-lists row w-90'>
+  <% if @bookreviews[0] != nil %>
+    <% @bookreviews.each do |book| %>
+    <li class='book-list t-center'>
+       <%= link_to bookreview_path(book.id) do %>
+       <div class='book-img-content'>
+         <%= image_tag book.image, class: "book-img w-100" %>
+       </div>
+       <% end %>
+       <div class='book-info py-1'>
+          <h4 class='book-name'>
+            <%= book.author %>
+          </h4>
+          <h4 class='book-name py-1'>
+            <%= book.title %>
+          </h4>
+        </div>
+    </li>
+    <% end %>
+  <% end %>
+  </ul>
+  <%= paginate @bookreviews %>
 </main>
+
 
 

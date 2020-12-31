@@ -30,3 +30,63 @@
      }
 }
 
+// 投稿一覧
+main{
+    h2{
+        position:relative;
+    }
+    h2::after{
+        content:"";
+        display:block;
+        width:400px;
+        height:3px;
+        background-color: #dda0dd;
+        position:absolute;
+        bottom:15px;
+        left:17px;
+     }
+    ul{
+        margin:0 auto;
+        -webkit-flex-wrap: wrap; 
+        -ms-flex-wrap    : wrap;     
+        .book-list{
+            min-width:20%;
+            .book-img-content{
+                width:100px;
+                margin:0 auto;
+                .book-img{
+                    height:140px;
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .book-list{
+        width:40%;
+    }
+  }
+
+@mixin search-input-grid() {
+    padding:10px;
+    margin:5px;
+  }
+
+// 検索エリア
+.search-label{
+    @include search-input-grid();
+    width:100px;
+    float: left;
+}
+.search-input{
+    @include search-input-grid();
+    border-radius:4px;
+    border: 1px  #ccc solid;
+}
+.search-btn{
+    font-size:20px;
+    padding:7px 10px;
+    border: none;
+    margin-left:15px;
+}
