@@ -20,6 +20,7 @@ https://book-sharing-rails.herokuapp.com/
 ## 書評検索機能
 - ransackを用いた検索機能の実装
 ![検索機能の実装](app/assets/images/search.png)
+![検索機能の実装](app/assets/images/ransack.png)
 
 
 
