@@ -1,24 +1,26 @@
-# README
+## アプリケーション概要
+- 使用言語
+Ruby(on Rails)/JavaScript/SCSS
+- 書評を記録するためのアプリケーション
+![アプリケーショントップ画](app/assets/images/top.png)
+- デモサイト
+https://book-sharing-rails.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 機能概要
+# ユーザー管理機能
+- ログイン・新規登録機能
+- ウィザード形式をお持ちいた登録機能
+![ウィザード形式](app/assets/images/wizard.png)
 
-Things you may want to cover:
+# 書評投稿機能
+- 新規投稿・編集・削除機能実装
+- 画像投稿時はプレビューの表示
+![プレビュー画像](app/assets/images/preview.png)
 
-* Ruby version
+# 書評検索機能
+- ransackを用いた検索機能の実装
+![検索機能の実装](app/assets/images/search.png)
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
