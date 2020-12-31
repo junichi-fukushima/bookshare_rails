@@ -1,4 +1,4 @@
-## アプリケーション概要
+# アプリケーション概要
 - 使用言語
 Ruby(on Rails)/JavaScript/SCSS
 - 書評を記録するためのアプリケーション
@@ -6,18 +6,18 @@ Ruby(on Rails)/JavaScript/SCSS
 - デモサイト
 https://book-sharing-rails.herokuapp.com/
 
-## 機能概要
-# ユーザー管理機能
+# 機能概要
+## ユーザー管理機能
 - ログイン・新規登録機能
 - ウィザード形式をお持ちいた登録機能
 ![ウィザード形式](app/assets/images/wizard.png)
 
-# 書評投稿機能
+## 書評投稿機能
 - 新規投稿・編集・削除機能実装
 - 画像投稿時はプレビューの表示
 ![プレビュー画像](app/assets/images/preview.png)
 
-# 書評検索機能
+## 書評検索機能
 - ransackを用いた検索機能の実装
 ![検索機能の実装](app/assets/images/search.png)
 
