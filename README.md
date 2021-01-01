@@ -5,6 +5,7 @@ Ruby(on Rails)/JavaScript/SCSS
 ![アプリケーショントップ画](app/assets/images/top.png)
 - デモサイト
 https://book-sharing-rails.herokuapp.com/
+(途中段階)
 
 # 機能概要
 ## ユーザー管理機能
