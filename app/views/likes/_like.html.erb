@@ -1,0 +1,9 @@
+<% if user_signed_in? && @bookreview.liked_by?(current_user)%>
+  <%=link_to bookreview_likes_path(@bookreview.id),  method: :delete, class: "bookreview_likes" , remote: true  do %>
+    <i class="fas fa-heart fa-large c-red"></i>
+  <% end %>
+<% else %>
+  <%=link_to bookreview_likes_path(@bookreview.id), method: :post, class: "bookreview_likes", remote: true do %>
+    <i class="far fa-heart fa-large c-red"></i>
+  <% end %>
+<% end %>

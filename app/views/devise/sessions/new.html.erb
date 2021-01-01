@@ -9,6 +9,14 @@
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
+    <%= link_to  user_facebook_omniauth_authorize_path , class: "login c-white sns-wrap w-40 row facebook mb-1 align-items-center justify-content-start", method: :post do %>
+        <i class="fa-lmidum  fab fa-facebook-square d-block c-white w-30"></i>
+        <p>Facebookでログインする</p>
+      <% end %>
+      <%= link_to  user_google_oauth2_omniauth_authorize_path , class: "login c-black sns-wrap w-40 row google mb-1 align-items-center justify-content-start bg-white", method: :post do %>
+        <i class="fa-lmidum  fab fa-google-plus-square d-block c-black w-30"></i>
+        <p class="c-black">Googleでログインする</p>
+      <% end %>
     <div class="form-group t-center">
       <div class='form-text-wrap'>
         <label class="form-text" for="email">メールアドレス</label>

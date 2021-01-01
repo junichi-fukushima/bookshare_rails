@@ -60,3 +60,7 @@ gem 'active_hash'
 gem 'devise'
 gem 'rails-i18n'
 gem 'kaminari'
+gem "font-awesome-sass"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

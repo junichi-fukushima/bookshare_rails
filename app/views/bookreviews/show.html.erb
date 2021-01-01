@@ -1,6 +1,11 @@
 <%= render "shared/header" %>
 <section class="p-2">
- <h2 class="c-blue py-1">タイトル: <%= @bookreview.title %></h2>
+ <div class="sec-top row align-items-center">
+  <h2 class="c-blue py-1">タイトル: <%= @bookreview.title %></h2>
+  <div class="px-1" id="like-btn<%= @bookreview.id %>">
+  <%= render partial: "likes/like" %>
+  </div> 
+ </div>
  <div class='book-lists'>
     <div class='list row'>
        <div class='book-img-content w-30'>
@@ -20,10 +25,13 @@
         </div>
     </div>
   </div>
+  </div>
+  <% if current_user.id == @bookreview.user_id %>
    <button class="action-btn t-center bg-blue c-white actions ">
       <%= link_to '編集ページへ', edit_bookreview_path(@bookreview.id) , class:"a_decorate c-white" %>
     </button>
    <button class="action-btn t-center bg-blue c-white actions">
       <%= link_to '投稿を削除する', bookreview_path(@bookreview.id),method: :delete , class:"a_decorate c-white" %>
     </button>
+  <% end %>  
 </section>

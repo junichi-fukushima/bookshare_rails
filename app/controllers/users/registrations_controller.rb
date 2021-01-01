@@ -7,18 +7,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-  
   end
 
   # POST /resource
   def create
+    # sessionにsnsの情報があったら、適当なパスワードをparamsにアタッチ
+    if session["devise.regist_data"] && session["devise.regist_data"]["sns"]
+      password = Devise.friendly_token[8,12] + "1a"
+      params[:user][:password] = password
+      params[:user][:password_confirmation] = password
+    end
+
     @user = User.new(sign_up_params)
     unless @user.valid?
       render :new and return
     end
-     session["devise.regist_data"] = {user: @user.attributes}
+     # attributesでデーターを整形(ハッシュ形式にする)
+     session["devise.regist_data"] ||= {}
+     session["devise.regist_data"][:user] = @user.attributes
      session["devise.regist_data"][:user]["password"] = params[:user][:password]
      
+     # nameに紐ずくインスタンスを生成する  
      @name = @user.build_name
      render :new_name
   end
@@ -26,12 +35,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create_name
     @user = User.new(session["devise.regist_data"]["user"])
     @name = Name.new(name_params)
+    @sns = SnsCredential.new(session["devise.regist_data"]["sns"])
+    @user.build_name(@name.attributes)
+    @user.sns_credentials.new(@sns.attributes)
+
      unless @name.valid?
        render :new_name and return
      end
-    @user.build_name(@name.attributes)
+   
     @user.save
     session["devise.regist_data"]["user"].clear
+    session["devise.regist_data"]["sns"]&.clear
     sign_in(:user, @user)
   end
  

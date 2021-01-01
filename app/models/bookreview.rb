@@ -8,7 +8,7 @@ class Bookreview < ApplicationRecord
 
   # アソシエーション
   belongs_to :user
-  has_many :comments
+  has_many :likes, dependent: :destroy
 
   # バリデーション
   with_options presence: true do
@@ -20,6 +20,10 @@ class Bookreview < ApplicationRecord
   validates :author, presence: { message:'の部分を正しく入力してください' }
   validates :title, presence: { message:'を正しく入力してください' }
 
+  # いいね済かを判定する。
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end
 
 

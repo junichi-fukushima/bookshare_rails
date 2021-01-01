@@ -1,0 +1,52 @@
+<%= render "shared/secondheader" %>
+<main>
+<h2 class="c-blue p-2 w-40 ">投稿した書評・アウトプット</h2>
+ <ul class='book-lists row w-90'>
+  <% if @account.bookreviews[0] != nil %>
+    <% @account.bookreviews.each do |book| %>
+    <li class='book-list t-center'>
+       <%= link_to bookreview_path(book.id) do %>
+       <div class='book-img-content'>
+         <%= image_tag book.image, class: "book-img w-100" %>
+       </div>
+       <% end %>
+       <div class='book-info py-1'>
+          <h4 class='book-name'>
+            <%= book.author %>
+          </h4>
+          <h4 class='book-name py-1'>
+            <%= book.title %>
+          </h4>
+        </div>
+    </li>
+    <% end %>
+    <% else %>
+  <p class="py-1">投稿した書評・アウトプットはありません</p>
+  <% end %>
+  </ul>
+  <h2 class="c-blue p-2 w-40 ">イイね！した書評・アウトプット</h2>
+  <ul class='book-lists row w-90'>
+  <% if @like_reviews[0] != nil %>
+    <% @like_reviews.each do |book| %>
+    <li class='book-list t-center'>
+       <%= link_to bookreview_path(book.id) do %>
+       <div class='book-img-content'>
+         <%= image_tag book.image, class: "book-img w-100" %>
+       </div>
+       <% end %>
+       <div class='book-info py-1'>
+          <h4 class='book-name'>
+            <%= book.author %>
+          </h4>
+          <h4 class='book-name py-1'>
+            <%= book.title %>
+          </h4>
+        </div>
+    </li>
+    <% end %>
+    <% else %>
+  <p class="py-1">投稿した書評・アウトプットはありません</p>
+  <% end %>
+  </ul>
+<main>
+<%= link_to "トップへ戻る", root_path ,class: "c-black other_path p-1" %>
