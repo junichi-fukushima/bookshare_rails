@@ -58,4 +58,11 @@
 #     forward_agent: false,
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
-#   }
+#   }]
+# サーバーホスト名(or IPアドレス)
+# AWSのサーバーへログインできるユーザー名
+# サーバーロール（後述）
+# sshの設定
+# その他サーバーに紐づく任意の設定
+server '54.238.36.232', user: 'ec2-user', roles: %w{app db web}
+
