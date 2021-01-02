@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: bookshare_rails_production
-  username: bookshare_rails
-  password: <%= ENV['bookshare_rails_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
