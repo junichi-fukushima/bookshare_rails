@@ -13,6 +13,7 @@ https://book-sharing-rails.herokuapp.com/
 - ウィザード形式をお持ちいた登録機能
 ![ウィザード形式](app/assets/images/wizard.png)
 - SNS認証 [Google & FaceBook]
+SNS認証は開発環境のみ実装（ドメインの取得が必要なため）
 ![SNS認証](app/assets/images/sns.png)
 
 ## 書評投稿機能
