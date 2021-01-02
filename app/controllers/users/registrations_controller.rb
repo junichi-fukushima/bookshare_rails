@@ -12,50 +12,46 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     # sessionにsnsの情報があったら、適当なパスワードをparamsにアタッチ
-    if session["devise.regist_data"] && session["devise.regist_data"]["sns"]
-      password = Devise.friendly_token[8,12] + "1a"
+    if session['devise.regist_data'] && session['devise.regist_data']['sns']
+      password = Devise.friendly_token[8, 12] + '1a'
       params[:user][:password] = password
       params[:user][:password_confirmation] = password
     end
 
     @user = User.new(sign_up_params)
-    unless @user.valid?
-      render :new and return
-    end
-     # attributesでデーターを整形(ハッシュ形式にする)
-     session["devise.regist_data"] ||= {}
-     session["devise.regist_data"][:user] = @user.attributes
-     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-     
-     # nameに紐ずくインスタンスを生成する  
-     @name = @user.build_name
-     render :new_name
+    render :new and return unless @user.valid?
+
+    # attributesでデーターを整形(ハッシュ形式にする)
+    session['devise.regist_data'] ||= {}
+    session['devise.regist_data'][:user] = @user.attributes
+    session['devise.regist_data'][:user]['password'] = params[:user][:password]
+
+    # nameに紐ずくインスタンスを生成する
+    @name = @user.build_name
+    render :new_name
   end
 
   def create_name
-    @user = User.new(session["devise.regist_data"]["user"])
+    @user = User.new(session['devise.regist_data']['user'])
     @name = Name.new(name_params)
-    @sns = SnsCredential.new(session["devise.regist_data"]["sns"])
+    @sns = SnsCredential.new(session['devise.regist_data']['sns'])
     @user.build_name(@name.attributes)
     @user.sns_credentials.new(@sns.attributes)
 
-     unless @name.valid?
-       render :new_name and return
-     end
-   
+    render :new_name and return unless @name.valid?
+
     @user.save
-    session["devise.regist_data"]["user"].clear
-    session["devise.regist_data"]["sns"]&.clear
+    session['devise.regist_data']['user'].clear
+    session['devise.regist_data']['sns']&.clear
     sign_in(:user, @user)
   end
- 
+
   private
- 
+
   def name_params
     params.require(:name).permit(:first_name, :last_name, :nickname,
-      :last_name_kana,:first_name_kana,:birth_date, :email)
+                                 :last_name_kana, :first_name_kana, :birth_date, :email)
   end
-
 
   # GET /resource/edit
   # def edit

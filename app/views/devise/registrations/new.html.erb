@@ -6,11 +6,11 @@
   </h2>
   <div class='form-wrap w-60 c-black bg-light-gray'>
     <%= render "devise/shared/error_messages", resource: @user %>
-      <%= link_to  user_facebook_omniauth_authorize_path , class: "login c-white sns-wrap w-40 row facebook mb-1 align-items-center justify-content-start", method: :post do %>
+      <%= link_to  user_facebook_omniauth_authorize_path , class: "login c-white sns-wrap w-55 row facebook mb-1 align-items-center justify-content-start", method: :post do %>
         <i class="fa-lmidum  fab fa-facebook-square d-block c-white w-30"></i>
         <p>Facebookで登録する</p>
       <% end %>
-      <%= link_to  user_google_oauth2_omniauth_authorize_path , class: "login c-black sns-wrap w-40 row google mb-1 align-items-center justify-content-start bg-white", method: :post do %>
+      <%= link_to  user_google_oauth2_omniauth_authorize_path , class: "login c-black sns-wrap w-55 row google mb-1 align-items-center justify-content-start bg-white", method: :post do %>
         <i class="fa-lmidum  fab fa-google-plus-square d-block c-black w-30"></i>
         <p class="c-black">Googleで登録する</p>
       <% end %>

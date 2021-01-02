@@ -1,4 +1,4 @@
-$bp: 650px;
+$bp: 700px;
 
 body{
   font-family: "Noto Sans  CJK JP Bold", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
@@ -39,7 +39,11 @@ h2{
 h3{
   font-size:20px;
 }
-
+@media screen and (max-width: $bp) {
+  .h2{
+    font-size:20px;
+  }
+}
 p {
   font-size: 16px;
   line-height: 1.8;
@@ -53,9 +57,7 @@ p {
 .fa-large{
 	font-size: 40px ;
 }
-.fa-lmidum{
-	font-size: 30px ;
-}
+
 // ボタン関連
 .white-btn{
   padding: 6px 8px;

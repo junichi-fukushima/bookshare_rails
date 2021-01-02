@@ -1,9 +1,8 @@
 <%= render "shared/header" %>
 
 <main>
-<h2 class="c-blue p-2 w-40 ">書評・アウトプット検索結果</h2>
+<h2 class="c-blue p-2">書評・アウトプット検索結果</h2>
 <ul class='book-lists row w-90 p-2'>
-
   <% if @results.length !=0 %>
     <% @results.each do |result| %>
     <li class='book-list t-center'>

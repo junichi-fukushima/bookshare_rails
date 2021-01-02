@@ -76,9 +76,17 @@
 
 // facebook google
 .sns-wrap{
-   padding:15px 20px;
+    padding:10px 20px;
     border-radius:4px;
     margin:0 auto;
+    p{
+        // 〜以上、固定値、〜以下
+        font-size: clamp(1vw, 16px, 2vw);
+    }
+    
+}
+.fa-lmidum{
+    font-size: clamp(2vw, 25px, 4vw);
 }
 .facebook{
     background-color: rgb(56,81,132);

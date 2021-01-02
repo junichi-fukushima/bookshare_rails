@@ -1,16 +1,17 @@
+$bp: 700px;
 // kv
 .kv{
-    position: relative;
-}
-.kv-img_small{
-    height:450px;
+  position: relative;
+  .kv-img_small{
+     height:450px;
     max-height:800px;
-}
-.kv-img_midum{
+   }
+  .kv-img_midum{
     height:700px;
     max-height:850px;
-}
-.kv-title{
+  }
+
+  .kv-title{
     width:60%;
     text-align: center;
     position: absolute;
@@ -27,51 +28,59 @@
     @keyframes fadeIn { 
         0% {opacity: 0} 
         100% {opacity: 1} 
-     }
+    }   
+    .kv-btn{
+        width:55%;
+    }
+ }
 }
-
+@media screen and (max-width: $bp) {
+  .kv-btn{
+    width:80% !important ; 
+  }
+}
 // 投稿一覧
 main{
-    h2{
-        position:relative;
+  h2{
+    position:relative;
+   }
+  h2::after{
+    content:"";
+    display:block;
+    width:400px;
+    height:3px;
+    background-color: #dda0dd;
+    position:absolute;
+    bottom:15px;
+    left:17px;
     }
-    h2::after{
-        content:"";
-        display:block;
-        width:400px;
-        height:3px;
-        background-color: #dda0dd;
-        position:absolute;
-        bottom:15px;
-        left:17px;
-     }
-    ul{
-        margin:0 auto;
-        -webkit-flex-wrap: wrap; 
-        -ms-flex-wrap    : wrap;     
-        .book-list{
-            min-width:20%;
-            .book-img-content{
-                width:100px;
-                margin:0 auto;
-                .book-img{
-                    height:140px;
+  ul{
+    margin:0 auto;
+    -webkit-flex-wrap: wrap; 
+    -ms-flex-wrap    : wrap;     
+      .book-list{
+        min-width:20%;
+         .book-img-content{
+           width:100px;
+           margin:0 auto;
+             .book-img{
+                height:140px;
                 }
             } 
         }
     }
 }
 
-@media screen and (max-width: 600px) {
-    .book-list{
-        width:40%;
-    }
+@media screen and (max-width: $bp) {
+  .book-list{
+   width:40%;
   }
+}
 
 @mixin search-input-grid() {
-    padding:10px;
-    margin:5px;
-  }
+  padding:10px;
+  margin:5px;
+}
 
 // 検索エリア
 .search-label{

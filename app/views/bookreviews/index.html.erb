@@ -11,15 +11,15 @@
   <div class="kv-title w-60 fade">
     <h1>BookShare</h1>
     <p class="py-1">〜学んだ知識をアウトプットしよう〜</p>
-    <p class="white-btn t-center bg-white a_decorate w-50">
+    <p class="kv-btn white-btn t-center bg-white a_decorate">
       <%= link_to "本のアウトプットを投稿する", new_bookreview_path ,class: "c-black" %>
     </p>
   </div>
 </div>
 <main class="bg-gray pb-05">
- <h2 class="c-blue p-2 w-40 ">書評・アウトプット投稿一覧</h2>
+ <h2 class="c-blue p-2  ">書評・アウトプット投稿一覧</h2>
  <%= search_form_for @p, url: search_bookreviews_path do |f| %>
- <h3 class="c-blue py-1 px-2 w-40 ">書評・アウトプット検索</h3>
+ <h3 class="c-blue py-1 px-2">書評・アウトプット検索</h3>
  <div class='search-form-wrap row align-items-center mb-2 px-1 '>
    <div class="wrap">
     <div class="search-form-group">

@@ -38,8 +38,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def authorization
-
-    auth = request.env["omniauth.auth"]
+    auth = request.env['omniauth.auth']
     # first_or_initialize → where文で一致していない場合新しいインスタンスを作る
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_initialize
     @user = User.from_sns_credential(sns, auth)
@@ -50,8 +49,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       # @userがDBにいないならば: ユーザ新規ログイン画面に遷移させる。
       # 変数がnilかfalseのみの時代入
-      session["devise.regist_data"] ||= {}
-      session["devise.regist_data"]["sns"] = sns.attributes
+      session['devise.regist_data'] ||= {}
+      session['devise.regist_data']['sns'] = sns.attributes
       render template: 'devise/registrations/new'
     end
   end
