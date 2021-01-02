@@ -2,9 +2,11 @@
 <section class="p-2">
  <div class="sec-top row align-items-center">
   <h2 class="c-blue py-1">タイトル: <%= @bookreview.title %></h2>
+  <% if user_signed_in?  %>
   <div class="px-1" id="like-btn<%= @bookreview.id %>">
   <%= render partial: "likes/like" %>
   </div> 
+  <% end %>  
  </div>
  <div class='book-lists'>
     <div class='list row'>
