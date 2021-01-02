@@ -26,7 +26,7 @@
     </div>
   </div>
   </div>
-  <% if current_user.id == @bookreview.user_id %>
+  <% if user_signed_in? && current_user.id == @bookreview.user_id  %>
    <button class="action-btn t-center bg-blue c-white actions ">
       <%= link_to '編集ページへ', edit_bookreview_path(@bookreview.id) , class:"a_decorate c-white" %>
     </button>
