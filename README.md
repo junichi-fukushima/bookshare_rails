@@ -5,7 +5,6 @@ Ruby(on Rails)/JavaScript/SCSS
 ![アプリケーショントップ画](app/assets/images/top.png)
 - デモサイト(AWS EC2 & S3)
 http://54.238.36.232/
-(途中段階)
 
 # 機能概要
 ## ユーザー管理機能
