@@ -3,8 +3,8 @@
 Ruby(on Rails)/JavaScript/SCSS
 - 書評を記録するためのアプリケーション
 ![アプリケーショントップ画](app/assets/images/top.png)
-- デモサイト
-https://book-sharing-rails.herokuapp.com/
+- デモサイト(AWS EC2 & S3)
+http://54.238.36.232/
 (途中段階)
 
 # 機能概要
