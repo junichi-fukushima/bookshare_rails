@@ -1,24 +1,37 @@
-<header class="global-nav bg-black row align-items-center justify-content-between c-white">
-  <div class="left-nav">
-    <h1>
-      <%= link_to 'BookShare', root_path ,class: "c-white" %>
-    </h1>
-  </div>
-  <div class="right-nav row justify-content-between">
+<header class="sp sp-nav">
+  <nav id="nav">
+    <ul>
     <% if user_signed_in?%>
-      <p class="white-btn t-center bg-white a_decorate ">
-       <%= link_to 'ログアウト',  destroy_user_session_path, method: :delete, class: "c-black" %>
-      </p>
-      <p class="white-btn t-center bg-white a_decorate ">
-        <%= link_to "マイページ", account_path , class: "c-black" %>
-      </p>
-    <% else %>
-      <p class="white-btn t-center bg-white a_decorate">
-        <%= link_to '新規登録', new_user_registration_path, class: "c-black" %>
-      </p>
-      <p class="white-btn t-center bg-white a_decorate">
-        <%= link_to 'ログイン', new_user_session_path, class: "c-black" %>
-      </p>
-   <% end %>
+      <li><%= link_to 'ログアウト',  destroy_user_session_path, method: :delete, class: "c-black" %></li>
+      <li><%= link_to "マイページ", account_path , class: "c-black" %></li>
+      <li><%= link_to "書評投稿ページへ", new_bookreview_path ,class: "c-black" %></li>
+    <% else %>  
+      <li><%= link_to '新規登録', new_user_registration_path, class: "c-black" %></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "c-black" %></li>
+      <li><%= link_to "書評投稿ページへ", new_bookreview_path ,class: "c-black" %></li>
+    <% end %>  
+    </ul>
+  </nav>
+  <div id="hamburger">
+    <span class="inner_line" id="line1"></span>
+    <span class="inner_line" id="line2"></span>
+    <span class="inner_line" id="line3"></span>
   </div>
+</header>
+<header class="pc pc-nav row align-items-center c-white">
+  <% if user_signed_in?%>
+    <p class="white-btn t-center bg-white a_decorate ">
+    <%= link_to 'ログアウト',  destroy_user_session_path, method: :delete, class: "c-black" %>
+    </p>
+    <p class="white-btn t-center bg-white a_decorate ">
+      <%= link_to "マイページ", account_path , class: "c-black" %>
+    </p>
+  <% else %>
+    <p class="white-btn t-center bg-white a_decorate">
+      <%= link_to '新規登録', new_user_registration_path, class: "c-black" %>
+    </p>
+    <p class="white-btn t-center bg-white a_decorate ml-025">
+      <%= link_to 'ログイン', new_user_session_path, class: "c-black" %>
+    </p>
+<% end %>  
 </header>

@@ -1,10 +1,10 @@
 <%= render "shared/secondheader" %>
 
 <%= form_for(@user, url: user_registration_path) do |f| %>
-  <h2 class='form-header-text w-60'>
+  <h2 class='form-header-text'>
     アカウントを新規登録します。
   </h2>
-  <div class='form-wrap w-60 c-black bg-light-gray'>
+  <div class='form-wrap c-black bg-light-gray'>
     <%= render "devise/shared/error_messages", resource: @user %>
       <%= link_to  user_facebook_omniauth_authorize_path , class: "login c-white sns-wrap w-55 row facebook mb-1 align-items-center justify-content-start", method: :post do %>
         <i class="fa-lmidum  fab fa-facebook-square d-block c-white w-30"></i>
@@ -26,7 +26,7 @@
         <label class="form-text" for="email">メールアドレス</label>
         <span class="indispensable c-white bg-blue">必須</span>
       </div>
-      <%= f.email_field :email, class:"input-default w-60", id:"email", placeholder:"半角英数でご利用中のアドレスを入力", autofocus: true %>
+      <%= f.email_field :email, class:"input-default w-60", id:"email", placeholder:"半角英数で入力してください", autofocus: true %>
     </div>
 
   <%# sns認証の場合はパスワードを入力しない %>

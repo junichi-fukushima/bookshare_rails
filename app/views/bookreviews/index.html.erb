@@ -4,42 +4,46 @@
     <%= flash[:alert] %>
   </div>
 <% end %>
-<%= render "shared/header" %>
+<div class="overflow-hidden">
+
 <div class="kv">
-  <%= image_tag 'kv-small.jpg', class: 'kv-img_small sp vw-100' %>
-  <%= image_tag 'kv-midum.jpg', class: 'kv-img_midum pc vw-100' %>
-  <div class="kv-title w-60 fade">
+  <%= image_tag 'luis.jpg', class: 'kv-img_midum  vw-100' %>
+  <%= render "shared/header" %>
+  <div class="kv-title fade">
     <h1>BookShare</h1>
     <p class="py-1">〜学んだ知識をアウトプットしよう〜</p>
-    <p class="kv-btn white-btn t-center bg-white a_decorate">
+    <p class="pc kv-btn white-btn  bg-white a_decorate">
       <%= link_to "本のアウトプットを投稿する", new_bookreview_path ,class: "c-black" %>
     </p>
   </div>
 </div>
 <main class="bg-gray pb-05">
- <h2 class="c-blue p-2  ">書評・アウトプット投稿一覧</h2>
  <%= search_form_for @p, url: search_bookreviews_path do |f| %>
- <h3 class="c-blue py-1 px-2">書評・アウトプット検索</h3>
- <div class='search-form-wrap row align-items-center mb-2 px-1 '>
-   <div class="wrap">
-    <div class="search-form-group">
-      <%= f.label :author_eq, '著者名' ,class: "search-label" ,for: "author_cont" %>
-      <%= f.search_field :author_cont ,class: "search-input"%>
-      </div>  
-    <div class="search-form-group">
-      <%= f.label :title_eq, 'タイトル名' ,class: "search-label"%>
-      <%= f.search_field :title_cont ,class: "search-input"%>
+ <div class="title-wrap row align-items-center">
+    <%= image_tag 'megane.png', class: 'megane' %>
+    <h2 class="h3_search c-blue">投稿を検索する</h2>
+ </div>
+ <div>
+   <div class="search-form-wrap">
+     <div class="search-form-group">
+      <%= f.search_field :author_cont ,class: "search-input",placeholder:"著者名" %>
+     </div>  
+     <div class="search-form-group">
+      <%= f.search_field :title_cont ,class: "search-input",placeholder:"タイトル名" %>
       </div>  
       <div class="search-form-group">
-        <%= f.label :genre_id_eq, 'カテゴリ',class: "search-label" %>
-        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: "---"}, class:"search-input bg-white c-black" %>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: "カテゴリ"}, class:"search-input bg-white c-black" %>
       </div>  
     </div>
-    <div class="t-center">
+     <div class="search-btn-wrap">
         <%= f.submit '検索' , class: "search-btn t-center bg-blue c-white"%>
-    </div>
+      </div>  
   </div>  
  <% end %>
+ <div class="title-wrap row align-items-center">
+    <%= image_tag 'pencil.png', class: 'megane' %>
+    <h2 class="c-blue">書評・アウトプット投稿一覧</h2>
+ </div>
  <ul class='book-lists row w-90'>
   <% if @bookreviews[0] != nil %>
     <% @bookreviews.each do |book| %>
@@ -63,6 +67,4 @@
   </ul>
   <%= paginate @bookreviews %>
 </main>
-
-
-
+</div>

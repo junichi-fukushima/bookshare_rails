@@ -7,6 +7,7 @@ body{
     0% {opacity: 0} 
    100% {opacity: 1} 
   }
+  overflow-x:hidden;
 }
 img {
   align-self: flex-start; // for safari
@@ -15,7 +16,9 @@ img {
   width: 95%;
   margin: 0 auto;
 }
-
+.overflow-hidden{
+  overflow:hidden;
+}
 .a_decorate{
   text-decoration: none;
   display: inline-block;
@@ -38,10 +41,20 @@ h2{
 }
 h3{
   font-size:20px;
+  font-weight:bold;
 }
 @media screen and (max-width: $bp) {
-  .h2{
-    font-size:20px;
+  h1{
+    font-size:32px !important;
+  }
+  h2{
+    font-size:20px !important;
+  }
+  h3{
+    font-size:18px !important;
+  }
+  p{
+    font-size: 13px  !important;
   }
 }
 p {
@@ -75,7 +88,7 @@ p {
 .sp { display: none !important; }
  
 /* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 700px) {
     .pc { display: none !important; }
     .sp { display: block !important; }
 }
