@@ -4,7 +4,7 @@ Ruby(on Rails)/JavaScript/SCSS
 - 書評を記録するためのアプリケーション
 ![アプリケーショントップ画](app/assets/images/top.png)
 - スマホ画面
-![アプリケーショントップ画]resoponsive.png
+![アプリケーショントップ画](app/assets/images/resoponsive.png)
 - デモサイト(AWS EC2 & S3)
 http://54.238.36.232/
 
