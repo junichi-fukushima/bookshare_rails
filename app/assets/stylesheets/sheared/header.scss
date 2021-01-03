@@ -48,12 +48,11 @@ $bp: 700px;
 }
 #hamburger {
   z-index:999;
-  
   position: absolute;
   top: 20px;
   right: 30px;
-  width: 50px;
-  height: 44px;
+  width: 48px;
+  height: 25px;
   cursor: pointer;
   transition: 1s;
 }
@@ -61,8 +60,8 @@ $bp: 700px;
   display: block;
   position: absolute;
   right: 0;
-  width: 50px;
-  height: 3px;
+  width: 35px;
+  height: 2px;
   background-color: #ffffff;
   transition: 1s;
   border-radius: 4px;
@@ -71,7 +70,7 @@ $bp: 700px;
   top: 0;
 }
 #line2 {
-  top: 20px;
+  top: 10px;
 }
 #line3 {
   bottom: 0px;
@@ -84,14 +83,14 @@ $bp: 700px;
   background: #000000;
 }
 .line_1 {
-  transform: translateY(20px) rotate(-45deg);
+  transform: translateY(12px) rotate(-45deg);
   top: 0;
 }
 .line_2 {
   opacity: 0;
 }
 .line_3 {
-  transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-12px) rotate(45deg);
   bottom: 0;
 }
 
