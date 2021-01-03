@@ -64,6 +64,17 @@ textarea,
 select{
   border-radius:0;
 }
+input[type="text"],
+input[type="button"],
+input[type="email"],
+input[type="submit"],
+input[type="search"],
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 select{
   -webkit-appearance:none;
   -moz-appearance:none;
