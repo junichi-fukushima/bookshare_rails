@@ -64,9 +64,7 @@ main{
   .search-form-group{
     width:25%;
     padding: 0rem 2rem;
-    .search-input{
-      width:100%;
-    }
+    
   }
 }
 .search-label{
@@ -78,6 +76,7 @@ main{
     @include search-input-grid();
     border-radius:4px;
     border: 1px  #ccc solid;
+    width:100%;
 }
 .search-btn-wrap{
   padding: 0.5rem 2.25rem;
@@ -96,15 +95,16 @@ main{
     margin:0.5rem;
   }
 }
-.book-list{
-  width:40%;
-}
+
 @media screen and (max-width: $bp) {
   main{
     .search-form-wrap{
       display:block;
       .search-form-group{
         width:70% !important;
+        .search-input{
+          border-radius:2px;
+      }
       }
     }
 
@@ -121,8 +121,12 @@ main{
       }
       .search-btn{
         margin-top:0.5rem;
+        border-radius:2px;
       }
     }
-    
+    .book-list{
+      width:40%;
+      margin: 0 auto;
+    }
   }
 }
