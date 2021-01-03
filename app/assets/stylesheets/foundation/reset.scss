@@ -56,6 +56,13 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: 0;
+  border-radius:0;
+}
+button,
+input,
+textarea,
+select{
+  border-radius:0;
 }
 select{
   -webkit-appearance:none;

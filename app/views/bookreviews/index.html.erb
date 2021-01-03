@@ -27,10 +27,10 @@
  <div>
    <div class="search-form-wrap">
      <div class="search-form-group">
-      <%= f.search_field :author_cont ,class: "search-input",placeholder:"著者名" %>
+      <%= f.search_field :author_cont ,class: "input-default search-input",placeholder:"著者名" %>
      </div>  
      <div class="search-form-group">
-      <%= f.search_field :title_cont ,class: "search-input",placeholder:"タイトル名" %>
+      <%= f.search_field :title_cont ,class: "input-default search-input",placeholder:"タイトル名" %>
       </div>  
       <div class="search-form-group">
         <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: "カテゴリ"}, class:"search-input bg-white c-black" %>
