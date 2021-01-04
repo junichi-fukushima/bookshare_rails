@@ -67,11 +67,7 @@ main{
     
   }
 }
-.search-label{
-    @include search-input-grid();
-    width:100px;
-    float: left;
-}
+
 .search-input{
     @include search-input-grid();
     border-radius:4px;
@@ -80,13 +76,16 @@ main{
 }
 .search-btn-wrap{
   padding: 0.5rem 2.25rem;
+  margin-left: 0.25%;
+  width:25%;
   .search-btn{
-    width:28%;
+    width:100%;
     font-size:20px;
     border-radius:4px;
     border: none;
+ }
 }
-}
+
 
 .title-wrap{
   padding: 1rem 2rem;
