@@ -129,3 +129,56 @@ main{
     }
   }
 }
+// 詳細画面
+section{
+  padding: 2rem;
+  .sec-top{
+    h2{
+      padding: 1rem 0;
+    }
+  }
+  .book-img-content{
+        width:30%;
+  }
+  .book-info{
+    width:70%;
+    padding: 0 2rem;
+    .book-name,.book-name-output{
+      padding: 1rem 0;
+      .book-name-title{
+        width:15%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp) {
+  section{
+    padding: 1rem;
+    .sec-top{
+      h2{
+        padding: 0.5rem 0;
+      }
+    }
+    .list{
+      display: block;
+      .book-img-content{
+        width:50%;
+        margin: 0 auto;
+      }
+      .book-info{
+        width:90%;
+        padding: 0 1rem;
+        .book-name{
+          padding: 0.5rem 0;
+          .book-name-title{
+            width:30%;
+          }
+          .book-name-output{
+            width:70%;
+          }
+        }
+      }
+    }
+ }
+}

@@ -1,7 +1,7 @@
 <%= render "shared/secondheader" %>
-<section class="p-2">
+<section>
  <div class="sec-top row align-items-center">
-  <h2 class="c-blue py-1">タイトル: <%= @bookreview.title %></h2>
+  <h2 class="c-blue">タイトル: <%= @bookreview.title %></h2>
   <% if user_signed_in?  %>
   <div class="px-1" id="like-btn<%= @bookreview.id %>">
   <%= render partial: "likes/like" %>
@@ -10,17 +10,23 @@
  </div>
  <div class='book-lists'>
     <div class='list row'>
-       <div class='book-img-content w-30'>
+       <div class='book-img-content'>
          <%= image_tag @bookreview.image, class: "book-img w-100" %>
        </div>
-       <div class='book-info w-70 px-2'>
-          <h4 class='book-name'>
-            著者: <%= @bookreview.author %>
-          </h4>
-          <h4 class='book-name py-1'>
-            タイトル: <%= @bookreview.title %>
-          </h4>
-          <h4 class='book-name py-1'>
+       <div class='book-info'>
+          <div class='book-name row'>
+            <h4 class="book-name-title">投稿者:</h4>
+            <h4><%= @bookreview.user.nickname %></h4>
+          </div>
+          <div class='book-name row'>
+            <h4 class="book-name-title">著者:</h4>
+            <h4><%= @bookreview.author %></h4>
+          </div>
+          <div class='book-name row'>
+            <h4 class="book-name-title">タイトル:</h4>
+            <h4><%= @bookreview.title %></h4>
+          </div>
+          <h4 class="book-name-output">
             書評・アウトプット: 
           </h4>
           <p><%= @bookreview.text %><p>

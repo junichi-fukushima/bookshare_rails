@@ -24,7 +24,7 @@
   <p class="py-1">投稿した書評・アウトプットはありません</p>
   <% end %>
   </ul>
-  <h2 class="c-blue p-2 ">イイね！した書評・アウトプット</h2>
+  <h2 class="c-blue p-2 ">イイね！<i class="fas fa-heart  c-red"></i>した書評・アウトプット</h2>
   <ul class='book-lists row w-90'>
   <% if @like_reviews[0] != nil %>
     <% @like_reviews.each do |book| %>
@@ -49,4 +49,4 @@
   <% end %>
   </ul>
 <main>
-<%= link_to "トップへ戻る", root_path ,class: "c-black other_path p-1" %>
+<%= link_to ">>トップへ戻る", root_path ,class: "c-black other_path p-1" %>
