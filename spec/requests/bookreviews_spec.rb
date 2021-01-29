@@ -17,8 +17,9 @@ describe BookreviewsController, type: :request do
       expect(response.body).to include @bookreview.author
       expect(response.body).to include @bookreview.title
     end
-    it "投稿済みのツイートの画像が存在する" do 
+    it "投稿済みの書評の画像が存在する" do 
       get root_path
+      binding.pry
       expect(response.body).to include @bookreview.image
     end
     it "投稿検索フォームが存在する" do 
