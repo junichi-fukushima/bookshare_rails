@@ -36,6 +36,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '4.0.1'
 end
 
 group :development do
@@ -69,7 +72,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 # device側が対応していないためバージョンダウンを指定
-gem 'omniauth',' ~>1.9.1'
+gem 'omniauth', ' ~>1.9.1'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ransack'

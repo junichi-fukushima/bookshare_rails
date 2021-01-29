@@ -14,6 +14,7 @@ ja:
      bookreview:
        author: 著者
        text: 書評・アウトプット
+       title: タイトル
        image: 画像
        genre_id: ジャンル
 
