@@ -17,8 +17,10 @@ class BookreviewsController < ApplicationController
   end
 
   def create
+    binding.pry
     @bookreview = Bookreview.new(book_params)
     if @bookreview.valid?
+      binding.pry
       @bookreview.save
       return redirect_to root_path, alert: '投稿が完了しました。'
     end

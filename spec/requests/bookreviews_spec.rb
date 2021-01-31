@@ -1,9 +1,10 @@
 require 'rails_helper'
+
 describe BookreviewsController, type: :request do
 
   before do
     @bookreview = FactoryBot.build(:bookreview)
-    @bookreview.image = fixture_file_upload('/sample.png')
+    @bookreview.image = fixture_file_upload('/sample.png','image/png')
     @bookreview.save
   end
 
@@ -19,8 +20,7 @@ describe BookreviewsController, type: :request do
     end
     it "投稿済みの書評の画像が存在する" do 
       get root_path
-      binding.pry
-      expect(response.body).to include @bookreview.image
+      expect(response.body).to include @bookreview.image.attached?
     end
     it "投稿検索フォームが存在する" do 
     end
